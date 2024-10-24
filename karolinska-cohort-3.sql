@@ -65,7 +65,7 @@ asah AS (
     LEFT JOIN
         DORS D ON P.LopNr = D.LopNr
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
           AND (
             (
                 (P.Diagnos LIKE "I60%"
@@ -96,7 +96,7 @@ tbi AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND 
             ((P.Diagnos LIKE "S06%") OR
             ((P.Diagnos LIKE "S020%" OR
@@ -117,7 +117,7 @@ cvt AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (P.Diagnos LIKE "G08%"
         OR P.Diagnos LIKE "I676%"
         OR P.Diagnos LIKE "I636%"
@@ -139,7 +139,7 @@ ich AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (P.Diagnos LIKE "I61%")
         -- A few likely aSAH that fulfill the above criteria will need to be filtered out as such:
         AND (P.Op NOT LIKE "%AAC00%")
@@ -154,7 +154,7 @@ avm AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (P.Diagnos LIKE "Q28%")
         AND (P.Op NOT LIKE "%AAL00%")
         AND (P.Op NOT LIKE "%AAC00%")
@@ -168,7 +168,7 @@ ais AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (P.Diagnos LIKE "I63%")
         AND (P.Diagnos NOT LIKE "I636%")
         -- a few likely aSAH that fulfill the above criteria will need to be filtered out as such:
@@ -184,7 +184,7 @@ abm AS (
         FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (
             P.Diagnos LIKE "G00%" OR
             P.Diagnos LIKE "A390%" OR
@@ -202,7 +202,7 @@ ence AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (
             P.Diagnos LIKE "G04%" OR
             P.Diagnos LIKE "G05%" OR
@@ -220,7 +220,7 @@ se AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (
             P.Diagnos LIKE "G41%" OR
             -- also include epilepsy
@@ -236,7 +236,7 @@ cfx AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (
             P.Diagnos LIKE 'S12%' OR
             P.Diagnos LIKE 'S13%' OR
@@ -254,7 +254,7 @@ sdh AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (
             P.Diagnos LIKE 'I62%'
         )
@@ -272,7 +272,7 @@ hc AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (
             P.Diagnos LIKE 'G91%'
         )
@@ -289,7 +289,7 @@ tum AS (
     FROM
         PAR_HADM P
     WHERE
-        P.SJUKHUS IN (11001, 11003)
+        P.SJUKHUS IN (11001, 11003,51001, 12001, 21001, 64001, 41001, 41002)
         AND (
             P.Diagnos LIKE 'D43%'
             OR P.Diagnos LIKE 'C71%'
